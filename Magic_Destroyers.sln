@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Magic_Destroyers", "Magic_Destroyers.csproj", "{22AEC05B-B727-4D60-A2D4-A5EE40F23AB0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22AEC05B-B727-4D60-A2D4-A5EE40F23AB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22AEC05B-B727-4D60-A2D4-A5EE40F23AB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22AEC05B-B727-4D60-A2D4-A5EE40F23AB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22AEC05B-B727-4D60-A2D4-A5EE40F23AB0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E144F4C-C751-417E-A2C9-13F6CA4665F1}
+	EndGlobalSection
+EndGlobal
