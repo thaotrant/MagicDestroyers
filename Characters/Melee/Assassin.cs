@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Magic_Destroyers.Equipments;
+using Magic_Destroyers.Equipments.Armor;
+using Magic_Destroyers.Equipments.Weapon
 
 namespace Magic_Destroyers.Characters.Melee
 {
@@ -15,8 +16,8 @@ namespace Magic_Destroyers.Characters.Melee
         private int _healthPoints;
         private int _level;
         private string _name;
-        private Armor _bodyArmor;
-        private Weapon _weapon;
+        private LightLeatherVest _bodyArmor;
+        private Sword _weapon;
 
         //Method
         public void Raze()
