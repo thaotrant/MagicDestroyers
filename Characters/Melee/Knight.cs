@@ -11,12 +11,20 @@ namespace Magic_Destroyers.Characters.Melee
     class Knight
     {
         private int _abilityPoints;
-        private string _faction;
         private int _healthPoints;
         private int _level;
+
+        private string _faction;
         private string _name;
+
         private Chainlink _bodyArmor;
         private Hammer _weapon;
+
+        //ctor
+        public Knight()
+        {
+            // tbd
+        }
 
         //Method
         public void HolyBlow()

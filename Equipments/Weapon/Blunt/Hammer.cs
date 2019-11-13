@@ -19,7 +19,14 @@ namespace Magic_Destroyers.Equipments.Weapon
             }
             set
             {
-                _damage = value; 
+                if(value >= 1)
+                {
+                    _damage = value;
+                }
+                else 
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Damage is out of range. It must be greater than 0.");
+                }
             }
         }
         public int Stun
@@ -33,8 +40,8 @@ namespace Magic_Destroyers.Equipments.Weapon
                 _stun = value;
             }
         }
-        //public void Stun
-        //{      
-        //}
+
+        //ctor
+        
     }
 }

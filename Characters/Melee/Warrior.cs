@@ -11,12 +11,19 @@ namespace Magic_Destroyers.Characters.Melee
     class Warrior
     {
         private int _abilityPoints;
-        private string _faction;
         private int _healthPoints;
         private int _level;
+
+        private string _faction;
         private string _name;
+
         private Chainlink _bodyArmor;
         private Axe _weapon;
+        //ctor
+        public Warrior()
+        {
+            //tbd
+        }
 
         //Method
         public void Strike()
