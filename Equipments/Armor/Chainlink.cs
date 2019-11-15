@@ -18,7 +18,15 @@ namespace Magic_Destroyers.Equipments.Armor
             }
             set
             {
-                _armorPoints = value;
+                if(value >= 1)
+                {
+                    _armorPoints = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "ArmorPoint must be greater than 0.");
+                }
+
             }
         }
     }
