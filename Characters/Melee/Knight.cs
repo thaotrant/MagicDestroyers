@@ -24,13 +24,13 @@ namespace Magic_Destroyers.Characters.Melee
         {
             get
             {
-                return _abilityPoints;
+                return this._abilityPoints;
             }
             set
             {
-                if (value >= 0 && value <= 20)
+                if (value >= 0 && value <= 120)
                 {
-                    _abilityPoints = value;
+                    this._abilityPoints = value;
                 }
                 else
                 {
@@ -42,13 +42,13 @@ namespace Magic_Destroyers.Characters.Melee
         {
             get
             {
-                return _healthPoints;
+                return this._healthPoints;
             }
             set
             {
-                if (value >= 0 && value <= 30)
+                if (value >= 0 && value <= 130)
                 {
-                    _healthPoints = value;
+                    this._healthPoints = value;
                 }
                 else
                 {
@@ -60,13 +60,13 @@ namespace Magic_Destroyers.Characters.Melee
         {
             get
             {
-                return _name;
+                return this._name;
             }
             set
             {
                 if (value.Length >= 2 && value.Length <= 12)
                 {
-                    _name = value;
+                    this._name = value;
                 }
                 else
                 {
@@ -78,13 +78,13 @@ namespace Magic_Destroyers.Characters.Melee
         {
             get
             {
-                return _level;
+                return this._level;
             }
             set
             {
                 if (value > 0)
                 {
-                    _level = value;
+                    this._level = value;
                 }
                 else
                 {
@@ -97,13 +97,13 @@ namespace Magic_Destroyers.Characters.Melee
         {
             get
             {
-                return _faction;
+                return this._faction;
             }
             set
             {
                 if (value == "Melee" || value == "SpellCasters")
                 {
-                    _faction = value;
+                    this._faction = value;
                 }
                 else
                 {
@@ -115,31 +115,46 @@ namespace Magic_Destroyers.Characters.Melee
         {
             get
             {
-                return _bodyArmor;
+                return this._bodyArmor;
             }
             set
             {
-                _bodyArmor = value;
+                this._bodyArmor = value;
             }
         }
         public Hammer Weapon
         {
             get
             {
-                return _weapon;
+                return this._weapon;
             }
             set
             {
-                _weapon = value;
+                this._weapon = value;
             }
         }
 
         //ctor
         public Knight()
+            : this("Knight 1", 120)
         {
-            // tbd
+
+        }
+        public Knight(string name, int level)
+            : this(name, level, 100)
+        {
         }
 
+        public Knight(string name, int level, int healthPoint)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoint;
+            this.AbilityPoints = 100;
+            this.Faction = "Knight";
+            this.BodyArmor = new Chainlink();
+            this.Weapon = new Hammer();
+        }
         //Method
         public void HolyBlow()
         {

@@ -24,17 +24,17 @@ namespace Magic_Destroyers.Characters.Spellcasters
         {
             get
             {
-                return _abilityPoints;
+                return this._abilityPoints;
             }
             set
             {
-                if (value >= 0 && value <= 40)
+                if (value >= 0 && value <= 130)
                 {
-                    _abilityPoints = value;
+                    this._abilityPoints = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Ability point of {Name} is out of range. It must be between 0 and 40.");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Ability point of {Name} is out of range. It must be between 0 and 30.");
                 }
             }
         }
@@ -42,17 +42,17 @@ namespace Magic_Destroyers.Characters.Spellcasters
         {
             get
             {
-                return _healthPoints;
+                return this._healthPoints;
             }
             set
             {
-                if (value >= 0 && value <= 20)
+                if (value >= 0 && value <= 130)
                 {
-                    _healthPoints = value;
+                    this._healthPoints = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Health point of {Name} is out of range. It must be between 0 and 20.");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Health point of {Name} is out of range. It must be between 0 and 10.");
                 }
             }
         }
@@ -60,13 +60,13 @@ namespace Magic_Destroyers.Characters.Spellcasters
         {
             get
             {
-                return _name;
+                return this._name;
             }
             set
             {
-                if (value.Length >= 2 && value.Length <= 12)
+                if (value.Length >= 2 && value.Length <= 30)
                 {
-                    _name = value;
+                    this._name = value;
                 }
                 else
                 {
@@ -78,13 +78,13 @@ namespace Magic_Destroyers.Characters.Spellcasters
         {
             get
             {
-                return _level;
+                return this._level;
             }
             set
             {
                 if (value > 0)
                 {
-                    _level = value;
+                    this._level = value;
                 }
                 else
                 {
@@ -97,13 +97,13 @@ namespace Magic_Destroyers.Characters.Spellcasters
         {
             get
             {
-                return _faction;
+                return this._faction;
             }
             set
             {
                 if (value == "Melee" || value == "SpellCasters")
                 {
-                    _faction = value;
+                    this._faction = value;
                 }
                 else
                 {
@@ -115,28 +115,45 @@ namespace Magic_Destroyers.Characters.Spellcasters
         {
             get
             {
-                return _bodyArmor;
+                return this._bodyArmor;
             }
             set
             {
-                _bodyArmor = value;
+                this._bodyArmor = value;
             }
         }
         public Sword Weapon
         {
             get
             {
-                return _weapon;
+                return this._weapon;
             }
             set
             {
-                _weapon = value;
+                this._weapon = value;
             }
         }
         //ctor
         public Necromancer()
+            : this("Necromancer 1", 105)
         {
-             //
+
+        }
+        public Necromancer(string name, int level)
+            : this(name, level, 110)
+        {
+
+        }       
+        
+        public Necromancer(string name, int level, int healthPoint)
+        {
+            this.Name = name;
+            this.Level = level;
+            this.HealthPoints = healthPoint;
+            this.AbilityPoints = 110;
+            this.Faction = "Necromancer";
+            this.BodyArmor = new LightLeatherVest();
+            this.Weapon = new Sword();
         }
 
         //Method
