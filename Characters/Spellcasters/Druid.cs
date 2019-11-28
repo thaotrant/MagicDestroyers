@@ -11,6 +11,15 @@ namespace Magic_Destroyers.Characters.Spellcasters
 {
     class Druid
     {
+        //DEFAULT VALUE
+        private const string DEFAULT_NAME = "Druid 1";
+        private const int DEFAULT_LEVEL = 5;
+        private const int DEFAULT_HEALTHPOINTS = 100;
+        private const int DEFAULT_ABILITYPOINTS = 90;
+
+        private readonly Staff DEFAULT_STAFF_WEAPON = new Staff();
+        private readonly LightLeatherVest DEFAULT_LIGHTLEATHERVEST_ARMOR = new LightLeatherVest();
+        // FIELD
         private int _abilityPoints;        
         private int _healthPoints;
         private int _level;
@@ -136,12 +145,12 @@ namespace Magic_Destroyers.Characters.Spellcasters
         }
         //ctor
         public Druid()
-           : this("Druid 1", 105)
+           : this(DEFAULT_NAME, DEFAULT_LEVEL)
         {
 
         }
         public Druid(string name, int level)
-            : this(name, level, 100)
+            : this(name, level, DEFAULT_HEALTHPOINTS)
         {
         }
 
@@ -150,10 +159,10 @@ namespace Magic_Destroyers.Characters.Spellcasters
             this.Name = name;
             this.Level = level;
             this.HealthPoints = healthPoint;
-            this.AbilityPoints = 100;
+            this.AbilityPoints = DEFAULT_ABILITYPOINTS;
             this.Faction = "Druid";
-            this.BodyArmor = new LightLeatherVest();
-            this.Weapon = new Staff();
+            this.BodyArmor = DEFAULT_LIGHTLEATHERVEST_ARMOR;
+            this.Weapon = DEFAULT_STAFF_WEAPON;
         }
 
         //Method

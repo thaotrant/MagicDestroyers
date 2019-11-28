@@ -10,6 +10,15 @@ namespace Magic_Destroyers.Characters.Melee
 {
     class Knight
     {
+        //DEFAULT VALUE
+        private const string DEFAULT_NAME = "Knight 1";
+        private const int DEFAULT_LEVEL = 10;
+        private const int DEFAULT_HEALTHPOINTS = 100;
+        private const int DEFAULT_ABILITYPOINTS = 90;
+        
+        private readonly Hammer DEFAULT_HAMMER_WEAPON = new Hammer();
+        private readonly Chainlink DEFAULT_CHAINLINK_ARMOR = new Chainlink();
+        // FIELD
         private int _abilityPoints;
         private int _healthPoints;
         private int _level;
@@ -136,12 +145,12 @@ namespace Magic_Destroyers.Characters.Melee
 
         //ctor
         public Knight()
-            : this("Knight 1", 120)
+            : this(DEFAULT_NAME, DEFAULT_LEVEL)
         {
 
         }
         public Knight(string name, int level)
-            : this(name, level, 100)
+            : this(name, level, DEFAULT_HEALTHPOINTS)
         {
         }
 
@@ -150,10 +159,10 @@ namespace Magic_Destroyers.Characters.Melee
             this.Name = name;
             this.Level = level;
             this.HealthPoints = healthPoint;
-            this.AbilityPoints = 100;
+            this.AbilityPoints = DEFAULT_ABILITYPOINTS;
             this.Faction = "Knight";
-            this.BodyArmor = new Chainlink();
-            this.Weapon = new Hammer();
+            this.BodyArmor = DEFAULT_CHAINLINK_ARMOR;
+            this.Weapon = DEFAULT_HAMMER_WEAPON;
         }
         //Method
         public void HolyBlow()

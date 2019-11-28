@@ -10,6 +10,15 @@ namespace Magic_Destroyers.Characters.Spellcasters
 {
     class Mage
     {
+        //DEFAULT VALUE
+        private const string DEFAULT_NAME = "Mage 1";
+        private const int DEFAULT_LEVEL = 5;
+        private const int DEFAULT_HEALTHPOINTS = 120;
+        private const int DEFAULT_ABILITYPOINTS = 90;
+
+        private readonly Staff DEFAULT_STAFF_WEAPON = new Staff();
+        private readonly ClothRobe DEFAULT_CLOTHROBE_ARMOR = new ClothRobe();
+        // FIELD
         private int _abilityPoints;
         private int _healthPoints;
         private int _level;
@@ -135,12 +144,12 @@ namespace Magic_Destroyers.Characters.Spellcasters
         }
         //ctor
         public Mage()
-           : this("Mage 1", 95)
+           : this(DEFAULT_NAME, DEFAULT_LEVEL)
         {
 
         }
         public Mage(string name, int level)
-            : this(name, level, 100)
+            : this(name, level, DEFAULT_HEALTHPOINTS)
         {
         }
 
@@ -149,10 +158,10 @@ namespace Magic_Destroyers.Characters.Spellcasters
             this.Name = name;
             this.Level = level;
             this.HealthPoints = healthPoint;
-            this.AbilityPoints = 100;
+            this.AbilityPoints = DEFAULT_ABILITYPOINTS;
             this.Faction = "Mage";
-            this.BodyArmor = new ClothRobe();
-            this.Weapon = new Staff();
+            this.BodyArmor = DEFAULT_CLOTHROBE_ARMOR;
+            this.Weapon = DEFAULT_STAFF_WEAPON;
         }
 
         //Method

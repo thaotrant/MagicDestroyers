@@ -10,6 +10,15 @@ namespace Magic_Destroyers.Characters.Spellcasters
 {
     class Necromancer
     {
+        //DEFAULT VALUE
+        private const string DEFAULT_NAME = "Necromancer 1";
+        private const int DEFAULT_LEVEL = 10;
+        private const int DEFAULT_HEALTHPOINTS = 110;
+        private const int DEFAULT_ABILITYPOINTS = 90;
+
+        private readonly Sword DEFAULT_SWORD_WEAPON = new Sword();
+        private readonly LightLeatherVest DEFAULT_LIGHTLEATHERVEST_ARMOR = new LightLeatherVest();
+        // FIELD
         private int _abilityPoints;
         private int _healthPoints;
         private int _level;
@@ -135,12 +144,12 @@ namespace Magic_Destroyers.Characters.Spellcasters
         }
         //ctor
         public Necromancer()
-            : this("Necromancer 1", 105)
+            : this(DEFAULT_NAME, DEFAULT_LEVEL)
         {
 
         }
         public Necromancer(string name, int level)
-            : this(name, level, 110)
+            : this(name, level, DEFAULT_HEALTHPOINTS)
         {
 
         }       
@@ -150,10 +159,10 @@ namespace Magic_Destroyers.Characters.Spellcasters
             this.Name = name;
             this.Level = level;
             this.HealthPoints = healthPoint;
-            this.AbilityPoints = 110;
+            this.AbilityPoints = DEFAULT_ABILITYPOINTS;
             this.Faction = "Necromancer";
-            this.BodyArmor = new LightLeatherVest();
-            this.Weapon = new Sword();
+            this.BodyArmor = DEFAULT_LIGHTLEATHERVEST_ARMOR;
+            this.Weapon = DEFAULT_SWORD_WEAPON;
         }
 
         //Method
