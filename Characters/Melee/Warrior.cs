@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Magic_Destroyers.Equipments.Armor;
 using Magic_Destroyers.Equipments.Weapon;
+using Magic_Destroyers.Enumerations;
 
 namespace Magic_Destroyers.Characters.Melee
 {
@@ -12,6 +13,8 @@ namespace Magic_Destroyers.Characters.Melee
     {
         //DEFAULT VALUE
         private const string DEFAULT_NAME = "Worrior 1";
+        private const Faction DEFAULT_FACTION = Faction.Melee;
+
         private const int DEFAULT_LEVEL = 5;
         private const int DEFAULT_HEALTHPOINTS = 120;
         private const int DEFAULT_ABILITYPOINTS = 110;
@@ -23,7 +26,7 @@ namespace Magic_Destroyers.Characters.Melee
         private int _healthPoints;
         private int _level;
 
-        private string _faction;
+        private Faction _faction;
         private string _name;
 
         private Chainlink _bodyArmor;
@@ -102,7 +105,7 @@ namespace Magic_Destroyers.Characters.Melee
             }
         }
 
-        public string Faction
+        public Faction Faction
         {
             get
             {
@@ -110,7 +113,7 @@ namespace Magic_Destroyers.Characters.Melee
             }
             set
             {
-                if (value == "Melee" || value == "SpellCasters")
+                if (value == Faction.Melee || value == Faction.Spellcaster)
                 {
                     this._faction = value;
                 }
@@ -158,7 +161,7 @@ namespace Magic_Destroyers.Characters.Melee
             this.Level = level;
             this.HealthPoints = healthPoint;
             this.AbilityPoints = DEFAULT_ABILITYPOINTS;
-            this.Faction = "Warrior";
+            this.Faction = DEFAULT_FACTION;
             this.BodyArmor = DEFAULT_CHAINLINK_ARMOR;
             this.Weapon = DEFAULT_AXE_WEAPON;
         }

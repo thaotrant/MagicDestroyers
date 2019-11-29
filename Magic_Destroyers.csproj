@@ -49,6 +49,7 @@
     <Compile Include="Characters\Spellcasters\Druid.cs" />
     <Compile Include="Characters\Spellcasters\Mage.cs" />
     <Compile Include="Characters\Spellcasters\Necromancer.cs" />
+    <Compile Include="Enumerations\Faction.cs" />
     <Compile Include="Equipments\Armor\Chainlink.cs" />
     <Compile Include="Equipments\Armor\ClothRobe.cs" />
     <Compile Include="Equipments\Armor\LightLeatherVest.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Equipments\Weapon\Blunt\Hammer.cs" />
     <Compile Include="Equipments\Weapon\Blunt\Staff.cs" />
     <Compile Include="Equipments\Weapon\Sharp\Sword.cs" />
+    <Compile Include="PlayersInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
