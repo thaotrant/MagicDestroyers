@@ -23,12 +23,7 @@ namespace Magic_Destroyers.Characters.Melee
         private readonly Chainlink DEFAULT_CHAINLINK_ARMOR = new Chainlink();
         // FIELD
         private int _abilityPoints;
-        private int _healthPoints;
-        private int _level;
-
-        private Faction _faction;
-        private string _name;
-
+        
         private Chainlink _bodyArmor;
         private Axe _weapon;
         //prop

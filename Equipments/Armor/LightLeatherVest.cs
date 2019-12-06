@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Magic_Destroyers.Equipments.Armor
 {
-    class LightLeatherVest
+    public class LightLeatherVest
     {
         private int _armorPoints;
         public int ArmorPoint

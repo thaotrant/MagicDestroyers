@@ -2,10 +2,11 @@
 using Magic_Destroyers.Equipments.Armor;
 using Magic_Destroyers.Equipments.Weapon;
 using Magic_Destroyers.Enumerations;
+using Characters;
 
-namespace Magic_Destroyers.Characters.Melee
+namespace Characters.Melee
 {
-    class Assassin
+    public class Assassin : Melee
     {
         // default values
         private const string DEFAULT_NAME = "Assassin 1";
@@ -19,106 +20,63 @@ namespace Magic_Destroyers.Characters.Melee
         private readonly LightLeatherVest DEFAULT_LIGHTlEATHERVEST_ARMOR = new LightLeatherVest();
 
         // field
-        private int _abilityPoints;
-        private int _healthPoints;
-        private int _level;
-
-        private Faction _faction;
-        private string _name;
-
+        
         private LightLeatherVest _bodyArmor;
         private Sword _weapon;
 
         //Prop
-        public int AbilityPoints 
+        public override int AbilityPoints 
         {
             get 
             {
-                return this._abilityPoints;
+                return base.AbilityPoints;
             }
             set
             {
                 if(value >= 0 && value <= 100)
                 {
-                    this._abilityPoints = value;
+                    base.AbilityPoints = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Ability point of {Name} is out of range. It must be between 0 and 10.");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Ability point of {base.Name} is out of range. It must be between 0 and 10.");
                 }
             }
         }
-        public int HealthPoints
+        public override int HealthPoints
         {
             get
             {
-                return this._healthPoints;
+                return base.HealthPoints;
             }
             set
             {
                 if (value >= 0 && value <= 100)
                 {
-                    this._healthPoints = value;
+                    base.HealthPoints = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Health point of {Name} is out of range. It must be between 0 and 10.");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Health point of {base.Name} is out of range. It must be between 0 and 10.");
                 }
             }
         }
-        public string Name
+       
+        public override int Level 
         {
             get
             {
-                return this._name;
-            }
-            set
-            {
-                if(value.Length >=2 && value.Length <=30)
-                {
-                    this._name = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Name must has from 2 to 12 characters.");
-                }
-            }
-        }
-        public int Level 
-        {
-            get
-            {
-                return this._level;
+                return base.Level;
             }
             set
             {
                 if(value > 0)
                 {
-                    this._level = value;
+                    base.Level = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Level of {Name} must be greater than 0.");
-                }
-            }
-        }
-
-
-        public Faction Faction
-        {
-            get
-            {
-                return this._faction;
-            }
-            set
-            {
-                if (value == Faction.Melee || value == Faction.Spellcaster)
-                {
-                    this._faction = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Faction of {Name} must be either Melee or SpellCasters.");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Level of {base.Name} must be greater than 0.");
                 }
             }
         }
