@@ -34,24 +34,6 @@ namespace Characters
                 }
             }
         }
-        public string Name
-        {
-            get
-            {
-                return this._name;
-            }
-            set
-            {
-                if (value.Length >= 2 && value.Length <= 30)
-                {
-                    this._name = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Name must has from 2 to 12 characters.");
-                }
-            }
-        }
         public virtual int Level
         {
             get
@@ -70,7 +52,24 @@ namespace Characters
                 }
             }
         }
-
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                if (value.Length >= 2 && value.Length <= 30)
+                {
+                    this._name = value;
+                }
+                else
+                {
+                    throw new ArgumentOutOfRangeException(string.Empty, "Name must has from 2 to 12 characters.");
+                }
+            }
+        }
         public Faction Faction
         {
             get

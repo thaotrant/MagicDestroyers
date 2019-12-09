@@ -7,9 +7,9 @@ using Magic_Destroyers.Equipments.Armor;
 using Magic_Destroyers.Equipments.Weapon;
 using Magic_Destroyers.Enumerations;
 
-namespace Magic_Destroyers.Characters.Melee
+namespace Characters.Melee
 {
-    public class Warrior
+    public class Warrior : Melee
     {
         //DEFAULT VALUE
         private const string DEFAULT_NAME = "Worrior 1";
@@ -22,102 +22,65 @@ namespace Magic_Destroyers.Characters.Melee
         private readonly Axe DEFAULT_AXE_WEAPON = new Axe();
         private readonly Chainlink DEFAULT_CHAINLINK_ARMOR = new Chainlink();
         // FIELD
-        private int _abilityPoints;
-        
+                
         private Chainlink _bodyArmor;
         private Axe _weapon;
         //prop
-        public int AbilityPoints
+        public override int AbilityPoints
         {
             get
             {
-                return this._abilityPoints;
+                return base.AbilityPoints;
             }
             set
             {
                 if (value >= 0 && value <= 130)
                 {
-                    this._abilityPoints = value;
+                    base.AbilityPoints = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Ability point of {Name} is out of range. It must be between 0 and 30.");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Ability point of {base.Name} is out of range. It must be between 0 and 30.");
                 }
             }
         }
-        public int HealthPoints
+        public override int HealthPoints
         {
             get
             {
-                return this._healthPoints;
+                return base.HealthPoints;
             }
             set
             {
                 if (value >= 0 && value <= 150)
                 {
-                    this._healthPoints = value;
+                    base.HealthPoints = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Health point of {Name} is out of range. It must be between 0 and 10.");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Health point of {base.Name} is out of range. It must be between 0 and 10.");
                 }
             }
         }
-        public string Name
+       public override int Level
         {
             get
             {
-                return this._name;
-            }
-            set
-            {
-                if (value.Length >= 2 && value.Length <= 30)
-                {
-                    this._name = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Name must has from 2 to 12 characters.");
-                }
-            }
-        }
-        public int Level
-        {
-            get
-            {
-                return this._level;
+                return base.Level;
             }
             set
             {
                 if (value > 0)
                 {
-                    this._level = value;
+                    base.Level = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Level of {Name} must be greater than 0.");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Level of {base.Name} must be greater than 0.");
                 }
             }
         }
-
-        public Faction Faction
-        {
-            get
-            {
-                return this._faction;
-            }
-            set
-            {
-                if (value == Faction.Melee || value == Faction.Spellcaster)
-                {
-                    this._faction = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Faction of {Name} must be either Melee or SpellCasters.");
-                }
-            }
-        }
+                
         public Chainlink BodyArmor
         {
             get

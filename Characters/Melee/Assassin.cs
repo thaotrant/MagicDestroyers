@@ -10,6 +10,7 @@ namespace Characters.Melee
     {
         // default values
         private const string DEFAULT_NAME = "Assassin 1";
+
         private const int DEFAULT_LEVEL = 5;
         private const int DEFAULT_HEALTHPOINTS = 120;
         private const int DEFAULT_ABILITYPOINTS = 100;
