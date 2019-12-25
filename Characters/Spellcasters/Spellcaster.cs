@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Magic_Destroyers.Characters.Spellcasters
+namespace Characters.Spellcasters
 {
-    public class Spellcaster : Character
+    public abstract class Spellcaster : Character
     {
         private int _manaPoints;
 

@@ -3,9 +3,9 @@ using Magic_Destroyers.Equipments.Weapon;
 using Magic_Destroyers.Equipments.Armor;
 using Magic_Destroyers.Enumerations;
 
-namespace Magic_Destroyers.Characters.Melee
+namespace Characters.Melee
 {
-    class Knight
+    public class Knight : Melee
     {
         //DEFAULT VALUE
         private const string DEFAULT_NAME = "Knight 1";
@@ -175,6 +175,21 @@ namespace Magic_Destroyers.Characters.Melee
         public void RighteousWings()
         {
 
+        }
+
+        public override void Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Defend()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SpecialAttack()
+        {
+            throw new NotImplementedException();
         }
     }
 }

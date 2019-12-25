@@ -8,9 +8,9 @@ using Magic_Destroyers.Equipments.Weapon;
 using Magic_Destroyers.Enumerations;
 
 
-namespace Magic_Destroyers.Characters.Spellcasters
+namespace Characters.Spellcasters
 {
-    class Druid
+    public class Druid : Spellcaster
     {
         //DEFAULT VALUE
         private const string DEFAULT_NAME = "Druid 1";
@@ -180,6 +180,21 @@ namespace Magic_Destroyers.Characters.Spellcasters
         public void OneWithTheNature()
         {
 
+        }
+
+        public override void Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Defend()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SpecialAttack()
+        {
+            throw new NotImplementedException();
         }
     }
 }

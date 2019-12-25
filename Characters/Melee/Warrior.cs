@@ -7,9 +7,9 @@ using Magic_Destroyers.Equipments.Armor;
 using Magic_Destroyers.Equipments.Weapon;
 using Magic_Destroyers.Enumerations;
 
-namespace Magic_Destroyers.Characters.Melee
+namespace Characters.Melee
 {
-    public class Warrior
+    public class Warrior : Melee
     {
         //DEFAULT VALUE
         private const string DEFAULT_NAME = "Worrior 1";
@@ -173,6 +173,21 @@ namespace Magic_Destroyers.Characters.Melee
         public void SkinHarden()
         {
 
+        }
+
+        public override void Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Defend()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SpecialAttack()
+        {
+            throw new NotImplementedException();
         }
     }
 }

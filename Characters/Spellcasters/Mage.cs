@@ -7,9 +7,9 @@ using Magic_Destroyers.Equipments.Armor;
 using Magic_Destroyers.Equipments.Weapon;
 using Magic_Destroyers.Enumerations;
 
-namespace Magic_Destroyers.Characters.Spellcasters
+namespace Characters.Spellcasters
 {
-    class Mage
+    public class Mage : Spellcaster
     {
         //DEFAULT VALUE
         private const string DEFAULT_NAME = "Mage 1";
@@ -179,6 +179,21 @@ namespace Magic_Destroyers.Characters.Spellcasters
         public void Meditation()
         {
 
+        }
+
+        public override void Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Defend()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SpecialAttack()
+        {
+            throw new NotImplementedException();
         }
     }
 }

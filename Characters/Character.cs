@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Magic_Destroyers.Enumerations;
+using Magic_Destroyers.Interface;
 
 namespace Characters
 {
-    public class Character
+    public abstract class Character : IAttacking, IDefending
     {
         // FIELD
         private int _healthPoints;
@@ -89,5 +90,11 @@ namespace Characters
                 }
             }
         }
+
+        public abstract void Attack();
+
+        public abstract void Defend();
+
+        public abstract void SpecialAttack();
     }
 }

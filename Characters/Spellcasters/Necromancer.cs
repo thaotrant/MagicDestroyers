@@ -7,9 +7,9 @@ using Magic_Destroyers.Equipments.Armor;
 using Magic_Destroyers.Equipments.Weapon;
 using Magic_Destroyers.Enumerations;
 
-namespace Magic_Destroyers.Characters.Spellcasters
+namespace Characters.Spellcasters
 {
-    class Necromancer
+    public class Necromancer : Spellcaster
     {
         //DEFAULT VALUE
         private const string DEFAULT_NAME = "Necromancer 1";
@@ -180,6 +180,21 @@ namespace Magic_Destroyers.Characters.Spellcasters
         public void BoneShield()
         {
 
+        }
+
+        public override void Attack()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Defend()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SpecialAttack()
+        {
+            throw new NotImplementedException();
         }
     }
 }

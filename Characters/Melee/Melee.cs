@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Characters.Melee
 {
-    public class Melee : Character
+    public abstract class Melee : Character
     {
         private int _abilityPoints;
 

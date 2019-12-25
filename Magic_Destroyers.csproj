@@ -60,6 +60,8 @@
     <Compile Include="Equipments\Weapon\Blunt\Hammer.cs" />
     <Compile Include="Equipments\Weapon\Blunt\Staff.cs" />
     <Compile Include="Equipments\Weapon\Sharp\Sword.cs" />
+    <Compile Include="Interface\IAttacking.cs" />
+    <Compile Include="Interface\IDefending.cs" />
     <Compile Include="PlayersInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
