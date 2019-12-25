@@ -2,6 +2,7 @@
 using Magic_Destroyers.Equipments.Weapon;
 using Magic_Destroyers.Equipments.Armor;
 using Magic_Destroyers.Enumerations;
+using Magic_Destroyers.Characters;
 
 namespace Characters.Melee
 {
@@ -18,45 +19,39 @@ namespace Characters.Melee
         private readonly Hammer DEFAULT_HAMMER_WEAPON = new Hammer();
         private readonly Chainlink DEFAULT_CHAINLINK_ARMOR = new Chainlink();
         // FIELD
-        private int _abilityPoints;
-        private int _healthPoints;
-        private int _level;
-
-        private Faction _faction;
-        private string _name;
-
+             
         private Chainlink _bodyArmor;
         private Hammer _weapon;
         // prop
-        public int AbilityPoints
+        public override int AbilityPoints
         {
             get
             {
-                return this._abilityPoints;
+                return base.AbilityPoints;
             }
             set
             {
                 if (value >= 0 && value <= 120)
                 {
-                    this._abilityPoints = value;
+                    base.AbilityPoints = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Ability point of {Name} is out of range. It must be between 0 and 20");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Ability point of {base.Name} is out of range. It must be between 0 and 20");
                 }
             }
         }
-        public int HealthPoints
+        public override int HealthPoints
         {
             get
             {
-                return this._healthPoints;
+                return base.HealthPoints;
             }
             set
             {
                 if (value >= 0 && value <= 130)
                 {
-                    this._healthPoints = value;
+                    base.HealthPoints = value;
                 }
                 else
                 {
@@ -64,61 +59,26 @@ namespace Characters.Melee
                 }
             }
         }
-        public string Name
+        public override int Level
         {
             get
             {
-                return this._name;
-            }
-            set
-            {
-                if (value.Length >= 2 && value.Length <= 12)
-                {
-                    this._name = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Name must has from 2 to 12 characters.");
-                }
-            }
-        }
-        public int Level
-        {
-            get
-            {
-                return this._level;
+                return base.Level;
             }
             set
             {
                 if (value > 0)
                 {
-                    this._level = value;
+                    base.Level = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Level of {Name} must be greater than 0.");
+                    throw new ArgumentOutOfRangeException(string.Empty, $"Level of {base.Name} must be greater than 0.");
                 }
             }
         }
 
-        public Faction Faction
-        {
-            get
-            {
-                return this._faction;
-            }
-            set
-            {
-                if (value == Faction.Melee || value == Faction.Spellcaster)
-                {
-                    this._faction = value;
-                }
-                else
-                {
-                    throw new ArgumentOutOfRangeException(string.Empty, $"Faction of {Name} must be either Melee or SpellCasters.");
-                }
-            }
-        }
+        
         public Chainlink BodyArmor
         {
             get
