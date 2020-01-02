@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Magic_Destroyers.Equipments.Armor
+namespace Equipments
 {
-    public class ClothRobe
+    public class Armor
     {
         private int _armorPoints;
         public int ArmorPoint
@@ -23,8 +23,9 @@ namespace Magic_Destroyers.Equipments.Armor
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Armor points is out of range. It must be greater than 0.");
+                    throw new ArgumentOutOfRangeException(string.Empty, "ArmorPoint must be greater than 0.");
                 }
+
             }
         }
     }

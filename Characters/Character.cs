@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Magic_Destroyers.Enumerations;
-using Magic_Destroyers.Interface;
+using Enumerations;
+using Interface;
+using Equipments;
 
 namespace Characters
 {
@@ -16,6 +17,9 @@ namespace Characters
 
         private Faction _faction;
         private string _name;
+
+        private Armor _armor;
+        private Weapon _weapon;
 
         public virtual int HealthPoints
         {
@@ -87,6 +91,30 @@ namespace Characters
                 {
                     throw new ArgumentOutOfRangeException(string.Empty, $"Faction of {Name} must be either Melee or SpellCasters.");
                 }
+            }
+        }
+
+        public Armor BodyArmor 
+        { 
+            get
+            {
+                return this._armor;
+            }
+            set
+            {
+                this._armor = value;
+            }
+        }
+
+        public Weapon Weapon 
+        {
+            get
+            {
+                return this._weapon;
+            }
+            set
+            {
+                this._weapon = value;
             }
         }
 

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Magic_Destroyers.Equipments.Armor;
-using Magic_Destroyers.Equipments.Weapon;
-using Magic_Destroyers.Enumerations;
+using Equipments;
+using Enumerations;
 
 
-namespace Characters.Spellcasters
+namespace Characters
 {
     public class Druid : Spellcaster
     {
@@ -22,9 +21,7 @@ namespace Characters.Spellcasters
 
         private readonly Staff DEFAULT_STAFF_WEAPON = new Staff();
         private readonly LightLeatherVest DEFAULT_LIGHTLEATHERVEST_ARMOR = new LightLeatherVest();
-        // FIELD
-        private LightLeatherVest _bodyArmor;
-        private Staff _weapon;
+        
         //prop
         public override int ManaPoints
         {
@@ -80,29 +77,6 @@ namespace Characters.Spellcasters
                 }
             }
         }
-
-       public LightLeatherVest BodyArmor
-        {
-            get
-            {
-                return this._bodyArmor;
-            }
-            set
-            {
-                this._bodyArmor = value;
-            }
-        }
-        public Staff Weapon
-        {
-            get
-            {
-                return this._weapon;
-            }
-            set
-            {
-                this._weapon = value;
-            }
-        }
         //ctor
         public Druid()
            : this(DEFAULT_NAME, DEFAULT_LEVEL)
@@ -116,13 +90,13 @@ namespace Characters.Spellcasters
 
         public Druid(string name, int level, int healthPoint)
         {
-            this.Name = name;
-            this.Level = level;
-            this.HealthPoints = healthPoint;
-            this.ManaPoints = DEFAULT_MANA_POINTS;
-            this.Faction = DEFAULT_FACTION ;
-            this.BodyArmor = DEFAULT_LIGHTLEATHERVEST_ARMOR;
-            this.Weapon = DEFAULT_STAFF_WEAPON;
+            base.Name = name;
+            base.Level = level;
+            base.HealthPoints = healthPoint;
+            base.ManaPoints = DEFAULT_MANA_POINTS;
+            base.Faction = DEFAULT_FACTION ;
+            base.BodyArmor = DEFAULT_LIGHTLEATHERVEST_ARMOR;
+            base.Weapon = DEFAULT_STAFF_WEAPON;
         }
 
         //Method

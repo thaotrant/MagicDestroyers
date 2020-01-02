@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Characters.Spellcasters
+namespace Characters
 {
     public abstract class Spellcaster : Character
     {

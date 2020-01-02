@@ -1,4 +1,4 @@
-﻿namespace Magic_Destroyers.Enumerations
+﻿namespace Enumerations
 {
     public enum Faction
     {

@@ -1,4 +1,4 @@
-﻿namespace Magic_Destroyers.Interface
+﻿namespace Interface
 {
     public interface IAttacking
     {

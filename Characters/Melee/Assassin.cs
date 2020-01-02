@@ -1,10 +1,9 @@
 ﻿using System;
-using Magic_Destroyers.Equipments.Armor;
-using Magic_Destroyers.Equipments.Weapon;
-using Magic_Destroyers.Enumerations;
+using Equipments;
+using Enumerations;
 using Characters;
 
-namespace Characters.Melee
+namespace Characters
 {
     public class Assassin : Melee
     {
@@ -18,12 +17,7 @@ namespace Characters.Melee
         private const Faction DEFAULT_FACTION = Faction.Melee;
 
         private readonly Sword DEFAULT_SWORD_WEAPON = new Sword();
-        private readonly LightLeatherVest DEFAULT_LIGHTlEATHERVEST_ARMOR = new LightLeatherVest();
-
-        // field
-        
-        private LightLeatherVest _bodyArmor;
-        private Sword _weapon;
+        private readonly LightLeatherVest DEFAULT_LIGHTlEATHERVEST_ARMOR = new LightLeatherVest();    
 
         //Prop
         public override int AbilityPoints 
@@ -81,28 +75,6 @@ namespace Characters.Melee
                 }
             }
         }
-        public LightLeatherVest BodyArmor 
-        { 
-            get
-            {
-                return this._bodyArmor;
-            }
-            set
-            {
-                this._bodyArmor = value;
-            }
-        }
-        public Sword Weapon
-        {
-            get
-            {
-                return this._weapon;
-            }
-            set
-            {
-                this._weapon = value;
-            }
-        }
         //constructor
         public Assassin()
             : this(DEFAULT_NAME, DEFAULT_LEVEL)
@@ -116,13 +88,13 @@ namespace Characters.Melee
 
         public Assassin(string name, int level, int healthPoint)
         {
-            this.Name = name;
-            this.Level = level;
-            this.HealthPoints = healthPoint;
-            this.AbilityPoints = DEFAULT_ABILITYPOINTS;
-            this.Faction = DEFAULT_FACTION;
-            this.BodyArmor = DEFAULT_LIGHTlEATHERVEST_ARMOR;
-            this.Weapon = DEFAULT_SWORD_WEAPON;
+            base.Name = name;
+            base.Level = level;
+            base.HealthPoints = healthPoint;
+            base.AbilityPoints = DEFAULT_ABILITYPOINTS;
+            base.Faction = DEFAULT_FACTION;
+            base.BodyArmor = DEFAULT_LIGHTlEATHERVEST_ARMOR;
+            base.Weapon = DEFAULT_SWORD_WEAPON;
 
         }
 

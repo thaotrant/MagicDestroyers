@@ -1,10 +1,9 @@
 ﻿using System;
-using Magic_Destroyers.Equipments.Weapon;
-using Magic_Destroyers.Equipments.Armor;
-using Magic_Destroyers.Enumerations;
-using Magic_Destroyers.Characters;
+using Equipments;
+using Enumerations;
+using Characters;
 
-namespace Characters.Melee
+namespace Characters
 {
     public class Knight : Melee
     {
@@ -19,9 +18,7 @@ namespace Characters.Melee
         private readonly Hammer DEFAULT_HAMMER_WEAPON = new Hammer();
         private readonly Chainlink DEFAULT_CHAINLINK_ARMOR = new Chainlink();
         // FIELD
-             
-        private Chainlink _bodyArmor;
-        private Hammer _weapon;
+        
         // prop
         public override int AbilityPoints
         {
@@ -77,31 +74,7 @@ namespace Characters.Melee
                 }
             }
         }
-
         
-        public Chainlink BodyArmor
-        {
-            get
-            {
-                return this._bodyArmor;
-            }
-            set
-            {
-                this._bodyArmor = value;
-            }
-        }
-        public Hammer Weapon
-        {
-            get
-            {
-                return this._weapon;
-            }
-            set
-            {
-                this._weapon = value;
-            }
-        }
-
         //ctor
         public Knight()
             : this(DEFAULT_NAME, DEFAULT_LEVEL)
@@ -115,13 +88,13 @@ namespace Characters.Melee
 
         public Knight(string name, int level, int healthPoint)
         {
-            this.Name = name;
-            this.Level = level;
-            this.HealthPoints = healthPoint;
-            this.AbilityPoints = DEFAULT_ABILITYPOINTS;
-            this.Faction = DEFAULT_FACTION;
-            this.BodyArmor = DEFAULT_CHAINLINK_ARMOR;
-            this.Weapon = DEFAULT_HAMMER_WEAPON;
+            base.Name = name;
+            base.Level = level;
+            base.HealthPoints = healthPoint;
+            base.AbilityPoints = DEFAULT_ABILITYPOINTS;
+            base.Faction = DEFAULT_FACTION;
+            base.BodyArmor = DEFAULT_CHAINLINK_ARMOR;
+            base.Weapon = DEFAULT_HAMMER_WEAPON;
         }
         //Method
         public void HolyBlow()

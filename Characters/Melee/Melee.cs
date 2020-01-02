@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Characters.Melee
+namespace Characters
 {
     public abstract class Melee : Character
     {

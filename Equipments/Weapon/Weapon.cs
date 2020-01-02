@@ -4,26 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Magic_Destroyers.Equipments.Armor
+namespace Equipments
 {
-    public class LightLeatherVest
+    public class Weapon
     {
-        private int _armorPoints;
-        public int ArmorPoint
+        private int _damage;
+        public int Damage
         {
             get
             {
-                return _armorPoints;
+                return _damage;
             }
             set
             {
                 if (value >= 1)
                 {
-                    _armorPoints = value;
+                    _damage = value;
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException(string.Empty, "Armor points is out of range. It must be greater than 0.");
+                    throw new ArgumentOutOfRangeException(string.Empty, "Damage is out of range. It must be greater than 0.");
                 }
             }
         }
