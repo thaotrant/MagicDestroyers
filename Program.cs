@@ -11,25 +11,52 @@ namespace Magic_Destroyers
     {
         static void Main(string[] args)
         {
-            Character warrior = new Warrior();
-            Character knight = new Knight();
-            Character assassin = new Assassin();
-            Character mage = new Mage();
-            Character necromancer = new Necromancer();
-            Character druid = new Druid();
+            bool gameOver = false;
 
-            List<Character> meleeTeam = new List<Character>();
-            List<Character> spellTeam = new List<Character>();
+            List<Character> characters = new List<Character>()
+            {
+                new Warrior(),
+                new Warrior(),
+                new Warrior(),
+                //new Knight(),
+                //new Assassin(),
+                new Mage(),
+                new Mage(),
+                new Mage()
+                //new Necromancer(),
+                //new Druid()
+            };
+            List<Melee> meleeTeam = new List<Melee>();
+            List<Spellcaster> spellTeam = new List<Spellcaster>();
 
-            meleeTeam.Add(warrior);
-            meleeTeam.Add(knight);
-            meleeTeam.Add(assassin);
+            foreach (var character in characters)
+            {
+                if (character is Melee)
+                {
+                    meleeTeam.Add(character as Melee);
+                }
+                else if (character is Spellcaster)
+                {
+                    spellTeam.Add((Spellcaster)character);
+                }
+            }
 
-            spellTeam.Add(mage);
-            spellTeam.Add(necromancer);
-            spellTeam.Add(druid);
+            while(!gameOver)
+            {
+                //1. Take a random Melee
+                //2. Taek a random Spell
 
-            
+                //3. Melee attack Spell
+                //3.1 check if he died then remove him from the melee
+                //3.2 if dead, take another character from the team
+
+                //4. Spell attack Melle
+                //4.1 check if he died then remove him from the melee
+                //4.2 if dead, take another character from the team
+
+            // 5. if no characters are alive either of the teams, game over = true
+            }
+
         }
     }
 }
