@@ -5,18 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Equipments;
 using Enumerations;
+using Magic_Destroyers;
 
 namespace Characters
 {
     public class Mage : Spellcaster
     {
         //DEFAULT VALUE
-        private const string DEFAULT_NAME = "Mage 1";
-        private const Faction DEFAULT_FACTION = Faction.Spellcaster;
-
-        private const int DEFAULT_LEVEL = 5;
-        private const int DEFAULT_HEALTHPOINTS = 120;
-        private const int DEFAULT_MANA_POINTS = 90;
 
         private readonly Staff DEFAULT_STAFF_WEAPON = new Staff();
         private readonly ClothRobe DEFAULT_CLOTHROBE_ARMOR = new ClothRobe();
@@ -80,12 +75,12 @@ namespace Characters
        
         //ctor
         public Mage()
-           : this(DEFAULT_NAME, DEFAULT_LEVEL)
+           : this(Consts.Mage.NAME, Consts.Mage.LEVEL)
         {
 
         }
         public Mage(string name, int level)
-            : this(name, level, DEFAULT_HEALTHPOINTS)
+            : this(name, level, Consts.Mage.HEALTHPOINTS)
         {
         }
 
@@ -94,39 +89,42 @@ namespace Characters
             base.Name = name;
             base.Level = level;
             base.HealthPoints = healthPoint;
-            base.ManaPoints = DEFAULT_MANA_POINTS;
-            base.Faction = DEFAULT_FACTION;
+            base.ManaPoints = Consts.Mage.MANA_POINTS;
+            base.Faction = Consts.Mage.FACTION;
             base.BodyArmor = DEFAULT_CLOTHROBE_ARMOR;
             base.Weapon = DEFAULT_STAFF_WEAPON;
+            base.IsAlive = true;
+            base.Score = 0;
         }
 
         //Method
-        public void ArcaneWrath()
+        public int Fireball()
         {
-
+            return base.Weapon.Damage + 10;            
         }
-        public void Firewall()
-        {
-
-        }
-        public void Meditation()
-        {
-
-        }
-
-        public override void Attack()
+        public int ArcaneWrath()
         {
             throw new NotImplementedException();
         }
-
-        public override void Defend()
+       
+        public int Meditation()
         {
-            throw new NotImplementedException();
+            return base.BodyArmor.ArmorPoint + 5;
         }
 
-        public override void SpecialAttack()
+        public override int Attack()
         {
-            throw new NotImplementedException();
+            return this.Fireball();
+        }
+
+        public override int Defend()
+        {
+            return Meditation();
+        }
+
+        public override int SpecialAttack()
+        {
+            return this.ArcaneWrath();
         }
     }
 }

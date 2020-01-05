@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Enumerations;
 using Interface;
 using Equipments;
+using Magic_Destroyers;
 
 namespace Characters
 {
@@ -14,6 +15,9 @@ namespace Characters
         // FIELD
         private int _healthPoints;
         private int _level;
+        private int _score;
+
+        private bool _isAlive;       
 
         private Faction _faction;
         private string _name;
@@ -117,11 +121,64 @@ namespace Characters
                 this._weapon = value;
             }
         }
+        public bool IsAlive 
+        {
+            get
+            {
+                return this._isAlive;
+            }
+            set
+            {
+                this._isAlive = value;
+            }
+        }
+        public int Score 
+        {
+            get
+            {
+                return this._score;
+            }
+            set
+            {
+                this._score = value;
+            }
+        }
+        public abstract int Attack();
 
-        public abstract void Attack();
+        public abstract int Defend();
 
-        public abstract void Defend();
+        public abstract int SpecialAttack();
 
-        public abstract void SpecialAttack();
+        public void TakeDamage(int damage, string attackName, string type)
+        {
+            if(this.Defend() < damage)
+            {
+                this._healthPoints = this._healthPoints - damage + this.Defend();
+                if(this._healthPoints <= 0)
+                {
+                    this._isAlive = false;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Haha! Your damage is not enough to harm me!");
+            }
+            if(!this._isAlive)
+            {
+                Tools.TypeSpecificColorfulCW($"{this._name} received {damage} damage from {attackName}, and is now dead!", type);
+            }
+            else
+            {
+                Tools.TypeSpecificColorfulCW($"{this._name} received {damage} damage from {attackName}, and is has {this._healthPoints} healthpoints!", type);
+            }
+        }
+        public void WonBattle()
+        {
+            this._score++;
+            if(this._score % 10 == 0)
+            {
+                this._level++;
+            }
+        }
     }
 }

@@ -5,19 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Equipments;
 using Enumerations;
+using Magic_Destroyers;
 
 namespace Characters
 { 
     public class Warrior : Melee
     {
-        //DEFAULT VALUE
-        private const string DEFAULT_NAME = "Worrior 1";
-        private const Faction DEFAULT_FACTION = Faction.Melee;
-
-        private const int DEFAULT_LEVEL = 5;
-        private const int DEFAULT_HEALTHPOINTS = 120;
-        private const int DEFAULT_ABILITYPOINTS = 110;
-
+        //DEFAULT VALUE  
         private readonly Axe DEFAULT_AXE_WEAPON = new Axe();
         private readonly Chainlink DEFAULT_CHAINLINK_ARMOR = new Chainlink();
        
@@ -78,11 +72,11 @@ namespace Characters
         }
         //ctor
         public Warrior()
-            : this(DEFAULT_NAME, DEFAULT_LEVEL)
+            : this(Consts.Warrior.NAME, Consts.Warrior.LEVEL)
         {
         }
         public Warrior(string name, int level)
-            : this(name, level, DEFAULT_HEALTHPOINTS)
+            : this(name, level, Consts.Warrior.HEALTHPOINTS)
         {   
         }
 
@@ -91,39 +85,41 @@ namespace Characters
             base.Name = name;
             base.Level = level;
             base.HealthPoints = healthPoint;
-            base.AbilityPoints = DEFAULT_ABILITYPOINTS;
-            base.Faction = DEFAULT_FACTION;
+            base.AbilityPoints = Consts.Warrior.ABILITYPOINTS;
+            base.Faction = Consts.Warrior.FACTION;
             base.BodyArmor = DEFAULT_CHAINLINK_ARMOR;
             base.Weapon = DEFAULT_AXE_WEAPON;
+            base.Score = 0;
+            base.IsAlive = true;
         }
 
         //Method
-        public void Strike()
+        public int Strike()
         {
-
+            return base.Weapon.Damage + 10;
         }
-        public void Execute()
-        {
-
-        }
-        public void SkinHarden()
-        {
-
-        }
-
-        public override void Attack()
-        {
-            this.Strike();
-        }
-
-        public override void Defend()
+        public int Execute()
         {
             throw new NotImplementedException();
         }
-
-        public override void SpecialAttack()
+        public int SkinHarden()
         {
-            throw new NotImplementedException();
+            return base.BodyArmor.ArmorPoint + 5;
+        }
+
+        public override int Attack()
+        {
+            return this.Strike();
+        }
+
+        public override int Defend()
+        {
+            return SkinHarden();
+        }
+
+        public override int SpecialAttack()
+        {
+            return this.Execute();
         }
     }
 }
